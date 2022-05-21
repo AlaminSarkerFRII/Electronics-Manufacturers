@@ -8,6 +8,13 @@ import NotFound from "./pages/shared/NotFound/NotFound";
 import Services from "./pages/Home/Services/Services/Services";
 import Login from "./pages/Login/Login/Login";
 import Register from "./pages/Login/Register/Register";
+import { useEffect } from "react";
+
+// aso animation
+
+// useEffect(() => {
+//   <script>AOS.init();</script>;
+// }, []);
 
 function App() {
   return (

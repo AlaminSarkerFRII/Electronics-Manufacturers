@@ -6,11 +6,12 @@ import InfoCard from "../InfoCard/InfoCard";
 
 const Card = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 items-center justify-center gap-4">
+    <div className="grid grid-cols-1 lg:grid-cols-3 items-center justify-center gap-4 px-20">
       <InfoCard
         cardTitle="Free Shipping"
         cardBody="On all orders over $75.00"
         img={clock}
+        bgColor="bg-warning"
       ></InfoCard>
       <InfoCard
         cardTitle="100% Payment Secure"
@@ -22,6 +23,7 @@ const Card = () => {
         cardTitle="Support 24/7"
         cardBody="Contact us 24 hours a day"
         img={phone}
+        bgColor="bg-warning"
       ></InfoCard>
     </div>
   );

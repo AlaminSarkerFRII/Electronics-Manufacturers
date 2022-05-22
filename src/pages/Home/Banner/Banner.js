@@ -5,9 +5,9 @@ import ban3 from "../../../assests/Banner/ban-3.jpg";
 
 const Banner = () => {
   return (
-    <div class="carousel h-2/5 ">
+    <div class="carousel h-96 ">
       <div id="slide1" class="carousel-item relative w-full">
-        <img src={ban1} class="w-full" alt="" />
+        <img src={ban1} class="w-full h-96" alt="" />
         <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
           <a href="#slide4" class="btn btn-circle">
             ❮
@@ -35,21 +35,6 @@ const Banner = () => {
             ❮
           </a>
           <a href="#slide4" class="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide4" class="carousel-item relative w-full">
-        <img
-          src="https://api.lorem.space/image/car?w=800&h=200&hash=225E6693"
-          class="w-full"
-          alt=""
-        />
-        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide3" class="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide1" class="btn btn-circle">
             ❯
           </a>
         </div>

@@ -16,8 +16,8 @@ const BodyBanner = () => {
               PRODUCT LIFECYCLE INTEGRATION
             </h2>
             <h1 class="text-5xl font-bold">
-              End-to-end Electronic Manufacturing Services that Compliment the
-              full Product Lifecycle.
+              End-to-end Electronic Manufacturing tools that Compliment the full
+              Product Lifecycle.
             </h1>
             <p class="py-6">
               We enable you to accomplish your business goals by supporting your

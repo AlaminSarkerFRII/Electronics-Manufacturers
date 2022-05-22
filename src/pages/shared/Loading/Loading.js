@@ -1,11 +1,7 @@
 import React from "react";
 
 const Loading = () => {
-  return (
-    <div>
-      <h2>Loading Components</h2>
-    </div>
-  );
+  return <button class="btn btn-square loading"></button>;
 };
 
 export default Loading;

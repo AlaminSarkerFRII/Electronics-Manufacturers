@@ -1,8 +1,22 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../Firebase.init";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
+  const [user] = useAuthState(auth);
+
+  const navigate = useNavigate();
+
+  // logout
+
+  const logout = () => {
+    signOut(auth);
+    navigate("/login");
+  };
+
   const menuItems = (
     <>
       <li>
@@ -38,8 +52,17 @@ const Navbar = () => {
       <li>
         <NavLink to="/blog">Blog</NavLink>
       </li>
-      <li>
-        <NavLink to="/login">Login</NavLink>
+      <li className="flex justify-between items-center">
+        {user ? (
+          <button
+            onClick={() => logout()}
+            className="btn btn-success btn-xs px-2 py-1"
+          >
+            Log Out
+          </button>
+        ) : (
+          <NavLink to="/login">Login</NavLink>
+        )}
       </li>
     </>
   );
@@ -98,7 +121,9 @@ const Navbar = () => {
                 <NavLink to="/">Settings</NavLink>
               </li>
               <li>
-                <NavLink to="/">Logout</NavLink>
+                <NavLink onClick={() => logout("/")} to="/">
+                  Logout
+                </NavLink>
               </li>
             </ul>
           </div>

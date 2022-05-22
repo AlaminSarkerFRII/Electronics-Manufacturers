@@ -15,11 +15,12 @@ const Tools = () => {
   }, []);
 
   return (
-    <div className="my-10 px-20">
+    <div className="my-20 px-20">
       <h1 className="text-xl text-center">Our tools</h1>
-      <h2 className="text-3xl text-center text-red-500">Tool We Provide</h2>
-      <h2 className="text-center text-xl">Tools:{tools.length} </h2>
-      <div className="my-20 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <h2 className="mb-10 text-4xl text-center text-red-500">
+        Electrical Components Manufacturers
+      </h2>
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {tools.map((tool) => (
           <Tool key={tool._id} tool={tool}></Tool>
         ))}

@@ -9,6 +9,8 @@ import Login from "./pages/Login/Login/Login";
 import Register from "./pages/Login/Register/Register";
 import Tools from "./pages/Home/Services/Tools/Tools";
 import Summary from "./pages/Home/Summary/Summary";
+import PrivateRoute from "./pages/Routes/PrivateRoute/PrivateRoute";
+import Tool from "./pages/Home/Services/Tool/Tool";
 
 // aso animation
 
@@ -24,6 +26,14 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/tools" element={<Tools />}></Route>
+        <Route
+          path="/tool/:id"
+          element={
+            <PrivateRoute>
+              <Tool />
+            </PrivateRoute>
+          }
+        ></Route>
         <Route path="/summary" element={<Summary />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>

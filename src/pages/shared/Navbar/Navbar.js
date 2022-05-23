@@ -52,6 +52,7 @@ const Navbar = () => {
       <li>
         <NavLink to="/blog">Blog</NavLink>
       </li>
+      <li>{user && <NavLink to="/dashboard">Dashboard</NavLink>}</li>
       <li className="flex justify-between items-center">
         {user ? (
           <button

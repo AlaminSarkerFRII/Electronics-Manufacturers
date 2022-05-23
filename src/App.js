@@ -11,6 +11,10 @@ import Tools from "./pages/Home/Services/Tools/Tools";
 import Summary from "./pages/Home/Summary/Summary";
 import PrivateRoute from "./pages/Routes/PrivateRoute/PrivateRoute";
 import Tool from "./pages/Home/Services/Tool/Tool";
+import Dashboard from "./pages/Dashboard/DashboardHome/Dashboard";
+import MyOrders from "./pages/Dashboard/MyOrders/MyOrders";
+import AddReview from "./pages/Dashboard/AddReview/AddReview";
+import MyProfile from "./pages/Dashboard/MyProfile/MyProfile";
 
 // aso animation
 
@@ -34,6 +38,19 @@ function App() {
             </PrivateRoute>
           }
         ></Route>
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard></Dashboard>
+            </PrivateRoute>
+          }
+        >
+          <Route index element={<MyOrders />}></Route>
+          <Route path="myOrder" element={<MyOrders />}></Route>
+          <Route path="addReview" element={<AddReview />}></Route>
+          <Route path="myProfile" element={<MyProfile />}></Route>
+        </Route>
         <Route path="/summary" element={<Summary />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>

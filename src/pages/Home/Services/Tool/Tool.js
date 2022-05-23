@@ -22,10 +22,14 @@ const Tool = () => {
   return (
     <div className="px-20">
       <h2 className="text-3xl text-center text-warning"> Place To Orders </h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 my-6 gap-0 min-h-md bg-base-200 mx-auto">
-        <div class="card max-w-sm max-h-md shadow-xl ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 my-6 gap-0 min-h-md bg-base-200 mx-auto  shadow-2xl rounded-xl">
+        <div class="card max-w-sm max-h-md mx-auto my-6 ">
           <figure>
-            <img src={tool.img} alt="images" />
+            <img
+              className="rounded-full w-56 h-56"
+              src={tool.img}
+              alt="images"
+            />
           </figure>
           <div class="card-body">
             <h2 class="card-title">
@@ -39,7 +43,7 @@ const Tool = () => {
               Available Quantity : {tool.inStock}
             </p>
             <p className="max-w-md">
-              {tool.desc?.slice(0, 100)} <span>....</span>
+              {tool.desc} <span>....</span>
             </p>
             {/* <div class="card-actions justify-end">
             <button onClick={() => handlePurchase(tool)} class="btn  btn-xs">
@@ -50,14 +54,24 @@ const Tool = () => {
           </div>
         </div>
         <div class="card-body">
-          <h2 className="text-center text-xl">
-            Order For :<span className="text-info font-bold"> {tool.name}</span>
+          <h2 className="text-center">
+            Order For :
+            <span className="text-info font-bold text-2xl"> {tool.name}</span>
           </h2>
           <div class="form-control">
             <input
               type="email"
               name="email"
               placeholder="email"
+              class="input input-bordered"
+              required
+            />
+          </div>
+          <div class="form-control">
+            <input
+              type="number"
+              name="number"
+              placeholder="Orders"
               class="input input-bordered"
               required
             />

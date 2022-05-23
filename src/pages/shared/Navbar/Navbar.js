@@ -7,7 +7,6 @@ import { signOut } from "firebase/auth";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
-
   const navigate = useNavigate();
 
   // logout
@@ -50,14 +49,21 @@ const Navbar = () => {
         <NavLink to="/tools">tools</NavLink>
       </li>
       <li>
+        <NavLink to="/review">Review</NavLink>
+      </li>
+      <li>
+        <NavLink to="/portfolio">Portfolio</NavLink>
+      </li>
+      <li>
         <NavLink to="/blog">Blog</NavLink>
       </li>
       <li>{user && <NavLink to="/dashboard">Dashboard</NavLink>}</li>
+
       <li className="flex justify-between items-center">
         {user ? (
           <button
             onClick={() => logout()}
-            className="btn btn-success btn-xs px-2 py-1"
+            className="btn btn-success btn-xs px-2 py-1 justify-between"
           >
             Log Out
           </button>
@@ -65,12 +71,15 @@ const Navbar = () => {
           <NavLink to="/login">Login</NavLink>
         )}
       </li>
+      <li>
+        <span className=" text-orange-400 font-bold">{user?.displayName}</span>
+      </li>
     </>
   );
 
   return (
     <>
-      <div className="navbar bg-base-100 sticky top-0 z-50">
+      <div className="navbar bg-base-100 sticky top-0 z-50 font-bold">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -97,7 +106,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost normal-case text-xl">
-            My Shop
+            manufacturer
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -106,15 +115,16 @@ const Navbar = () => {
         <div className="navbar-end">
           <div className="dropdown dropdown-end">
             <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
-              <FaUserCircle className="w-10 text-3xl rounded-full" />
+              <FaUserCircle className="w-10 text-3xl" />
             </label>
+
             <ul
               tabIndex="0"
-              className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+              className="mt-5 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
             >
               <li>
                 <NavLink to="/" className="justify-between">
-                  Profile
+                  profile
                   <span className="badge">New</span>
                 </NavLink>
               </li>

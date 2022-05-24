@@ -9,6 +9,7 @@ const Tool = () => {
   const { id } = useParams();
   const [user] = useAuthState(auth);
   const [tool, setTool] = useState({});
+  // const [orders, setOrders] = useState([]);
 
   useEffect(() => {
     const url = `http://localhost:5000/tool/${id}`;
@@ -17,7 +18,7 @@ const Tool = () => {
       .then((data) => {
         setTool(data);
       });
-  }, [user, id]);
+  }, [id]);
 
   // console.log(tool);
   // const navigate = useNavigate();
@@ -31,6 +32,7 @@ const Tool = () => {
   // quantity handle
 
   const handleQuantity = (e) => {
+    // e.preventDefault();
     setQuantity(e.target.value);
   };
 
@@ -40,13 +42,13 @@ const Tool = () => {
     e.preventDefault();
     const newQuantity = quantityRef.current.value || minOrderQuantity;
     if (newQuantity < minOrderQuantity) {
+      setBtnDisable(true);
       toast.error(`Minimum Order Quantity ${minOrderQuantity} pcs.`);
       return;
-    } else if (newQuantity > inStock) {
+    } else if (newQuantity > inStock && setBtnDisable(true)) {
       toast.error(`Maximum Order Quantity ${inStock} pcs.`);
       return;
     }
-
     const orderForm = {
       name: e.target.name.value,
       email: e.target.email.value,
@@ -54,11 +56,23 @@ const Tool = () => {
       address: e.target.address.value,
       quantity: newQuantity,
     };
-    console.log(orderForm);
+    // fetch to post
+    fetch("http://localhost:5000/order", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(orderForm),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast.success("Order Added Successfully");
+      });
   };
 
   useEffect(() => {
-    if (quantity > minOrderQuantity) {
+    if (quantity >= minOrderQuantity) {
       setBtnDisable(false);
     }
   }, [quantity, minOrderQuantity]);

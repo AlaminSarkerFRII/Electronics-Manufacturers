@@ -15,6 +15,9 @@ import Dashboard from "./pages/Dashboard/DashboardHome/Dashboard";
 import MyOrders from "./pages/Dashboard/MyOrders/MyOrders";
 import AddReview from "./pages/Dashboard/AddReview/AddReview";
 import MyProfile from "./pages/Dashboard/MyProfile/MyProfile";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Portfolio from "./pages/Home/Portfolio/Portfolio";
 
 // aso animation
 
@@ -52,10 +55,12 @@ function App() {
           <Route path="myProfile" element={<MyProfile />}></Route>
         </Route>
         <Route path="/summary" element={<Summary />}></Route>
+        <Route path="/portfolio" element={<Portfolio />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

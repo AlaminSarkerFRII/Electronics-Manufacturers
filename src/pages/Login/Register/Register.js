@@ -11,6 +11,7 @@ import {
 import { useForm } from "react-hook-form";
 import auth from "../../../Firebase.init";
 import Loading from "../../shared/Loading/Loading";
+import useToken from "../../hooks/useToken";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -33,7 +34,11 @@ const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
 
-  if (user || gUser) {
+  // use token hooks
+
+  const [token] = useToken(user || gUser);
+
+  if (token) {
     navigate(from, { replace: true });
   }
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { BiLogInCircle } from "react-icons/bi";
@@ -10,6 +10,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../../Firebase.init";
 import Loading from "../../shared/Loading/Loading";
+import useToken from "../../hooks/useToken";
 
 const Login = () => {
   // google sign in
@@ -30,7 +31,17 @@ const Login = () => {
 
   let from = location.state?.from?.pathname || "/";
 
+  // use token hooks jwt for verify
+
+  const [token] = useToken(user || gUser);
+
   let signInError;
+
+  useEffect(() => {
+    if (token) {
+      navigate(from, { replace: true });
+    }
+  }, [token, from, navigate]);
 
   // if user
   if (error || gError) {
@@ -40,9 +51,6 @@ const Login = () => {
   }
   if (loading || gLoading) {
     return <Loading />;
-  }
-  if (user || gUser) {
-    navigate(from, { replace: true });
   }
 
   // form submit

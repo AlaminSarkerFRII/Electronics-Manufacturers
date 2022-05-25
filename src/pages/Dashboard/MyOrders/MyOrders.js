@@ -7,7 +7,12 @@ const MyOrders = () => {
   const [user] = useAuthState(auth);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/order`)
+    fetch(`http://localhost:5000/order?user=${user.email}`, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -35,8 +40,8 @@ const MyOrders = () => {
               <tr>
                 <th>{index + 1}</th>
                 <td>{order.name}</td>
-                <td>Quality Control Specialist</td>
-                <td>Blue</td>
+                <td>{order.order}</td>
+                <td>{order.price}</td>
                 <td className="mr-2">
                   <button className="btn btn-xs mr-4">Pay</button>
                   <button className="btn btn-xs ">Cancel</button>

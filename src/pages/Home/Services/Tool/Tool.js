@@ -9,6 +9,7 @@ const Tool = () => {
   const { id } = useParams();
   const [user] = useAuthState(auth);
   const [tool, setTool] = useState({});
+  const [totalPrice, setTotalPrice] = useState(0);
   // const [orders, setOrders] = useState([]);
 
   useEffect(() => {
@@ -36,26 +37,28 @@ const Tool = () => {
     setQuantity(e.target.value);
   };
 
+  // let totalPriceValue;
   // form submit
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newQuantity = quantityRef.current.value || minOrderQuantity;
-    if (newQuantity < minOrderQuantity) {
+    // let totalPriceValue = parseInt(totalPrice * newQuantity);
+    if (newQuantity > minOrderQuantity) {
       setBtnDisable(true);
       toast.error(`Minimum Order Quantity ${minOrderQuantity} pcs.`);
-      return;
-    } else if (newQuantity > inStock && setBtnDisable(true)) {
-      toast.error(`Maximum Order Quantity ${inStock} pcs.`);
       return;
     }
     const orderForm = {
       name: e.target.name.value,
       email: e.target.email.value,
+      order: e.target.order.value,
+      price: e.target.price.value,
       phone: e.target.phone.value,
       address: e.target.address.value,
       quantity: newQuantity,
     };
+
     // fetch to post
     fetch("http://localhost:5000/order", {
       method: "POST",
@@ -75,6 +78,10 @@ const Tool = () => {
     if (quantity >= minOrderQuantity) {
       setBtnDisable(false);
     }
+
+    // else if (quantity >= inStock) {
+    //   setBtnDisable(false);
+    // }
   }, [quantity, minOrderQuantity]);
 
   return (
@@ -132,7 +139,26 @@ const Tool = () => {
             </div>
             <div class="form-control">
               <input
+                type="text"
+                name="order"
+                value={name}
+                class="input input-bordered"
+                readOnly
+              />
+            </div>
+            <div class="form-control">
+              <input
+                type="text"
+                name="price"
+                value={price}
+                class="input input-bordered"
+                readOnly
+              />
+            </div>
+            <div class="form-control">
+              <input
                 type="number"
+                id="quantity"
                 name="quantity"
                 placeholder={minOrderQuantity}
                 ref={quantityRef}
@@ -148,7 +174,7 @@ const Tool = () => {
                   Maximum Order :{inStock}
                 </p>
                 <p className="text-center text-xs">
-                  Total Price :$ <span>100000</span>
+                  Total Price :$ <span>{price * quantity}</span>
                 </p>
               </div>
             </div>

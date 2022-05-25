@@ -1,9 +1,10 @@
 import React from "react";
+import PageNotF from "../../../assests/404-error-page.jpg";
 
 const NotFound = () => {
   return (
-    <div>
-      <h2>Page Not Found !!! 404 </h2>
+    <div className="items-center justify-center">
+      <img className="w-full h-screen" src={PageNotF} alt="" />
     </div>
   );
 };

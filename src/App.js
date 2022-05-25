@@ -18,6 +18,7 @@ import MyProfile from "./pages/Dashboard/MyProfile/MyProfile";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Portfolio from "./pages/Home/Portfolio/Portfolio";
+import Blog from "./pages/Home/Blog";
 
 // aso animation
 
@@ -58,6 +59,7 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
+        <Route path="/blog" element={<Blog />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <ToastContainer />

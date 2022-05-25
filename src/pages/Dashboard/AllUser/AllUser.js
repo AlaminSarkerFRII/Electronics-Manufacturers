@@ -1,11 +1,9 @@
 import React from "react";
 import { useQuery } from "react-query";
-import useUsers from "../../hooks/useUsers";
 import Loading from "../../shared/Loading/Loading";
 import UserRow from "../UserRow/UserRow";
 
 const AllUser = () => {
-  //   const { users } = useUsers();
   const {
     data: users,
     isLoading,
@@ -14,8 +12,7 @@ const AllUser = () => {
     fetch("http://localhost:5000/user", {
       method: "GET",
       headers: {
-        "content-type": "application/json",
-        // authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     }).then((res) => res.json())
   );
@@ -26,9 +23,7 @@ const AllUser = () => {
 
   return (
     <div>
-      <h2 className="text-2xl text-center text-purple-600">
-        {/* All Users :{users.length} */}
-      </h2>
+      <h2 className="text-2xl text-center text-purple-600">All User</h2>
 
       <div class="overflow-x-auto">
         <table class="table w-full">

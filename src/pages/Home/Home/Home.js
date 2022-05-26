@@ -14,6 +14,7 @@ const Home = () => {
       <Card />
       <Tools />
       <BodyBanner />
+      {/* <Reviews></Reviews> */}
       <GetInTOuch />
       <Summary />
       <Footer />

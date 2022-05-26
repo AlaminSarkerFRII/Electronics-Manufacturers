@@ -20,6 +20,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Portfolio from "./pages/Home/Portfolio/Portfolio";
 import Blog from "./pages/Home/Blog";
 import AllUser from "./pages/Dashboard/AllUser/AllUser";
+import Payment from "./pages/Dashboard/Payment/Payment";
+import ManageOrder from "./pages/Dashboard/ManageOrder/ManageOrder";
 
 // aso animation
 
@@ -54,6 +56,8 @@ function App() {
           <Route index element={<MyOrders />}></Route>
           <Route path="myOrder" element={<MyOrders />}></Route>
           <Route path="addReview" element={<AddReview />}></Route>
+          <Route path="payment/:id" element={<Payment />}></Route>
+          <Route path="manageOrder/:id" element={<ManageOrder />}></Route>
           <Route path="myProfile" element={<MyProfile />}></Route>
           <Route path="users" element={<AllUser />}></Route>
         </Route>

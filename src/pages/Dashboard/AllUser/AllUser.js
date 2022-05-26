@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
 import Loading from "../../shared/Loading/Loading";
 import UserRow from "../UserRow/UserRow";
@@ -9,7 +9,7 @@ const AllUser = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch("http://localhost:5000/user", {
+    fetch("https://evening-ridge-50687.herokuapp.com/user", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -20,6 +20,8 @@ const AllUser = () => {
   if (isLoading) {
     return <Loading />;
   }
+
+  // console.log(users);
 
   return (
     <div>

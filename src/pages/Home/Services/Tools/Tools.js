@@ -7,7 +7,7 @@ const Tools = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const url = "http://localhost:5000/tool";
+    const url = "https://evening-ridge-50687.herokuapp.com/tool";
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

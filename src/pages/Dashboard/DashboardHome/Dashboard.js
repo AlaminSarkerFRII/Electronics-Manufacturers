@@ -5,8 +5,8 @@ import auth from "../../../Firebase.init";
 import useAdmin from "../../hooks/useAdmin";
 
 const Dashboard = () => {
-  const [user] = useAuthState(auth);
-  const [admin] = useAdmin(user);
+  // const [user] = useAuthState(auth);
+  // const [admin] = useAdmin(user);
 
   return (
     <div class="drawer drawer-mobile">
@@ -35,7 +35,9 @@ const Dashboard = () => {
           <li>
             <Link to="/dashboard/myProfile">My Profile</Link>
           </li>
-          <li>{admin && <Link to="/dashboard/users">All User</Link>}</li>
+          <li>
+            <Link to="/dashboard/users">All User</Link>
+          </li>
         </ul>
       </div>
     </div>

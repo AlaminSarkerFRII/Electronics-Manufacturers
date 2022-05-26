@@ -7,7 +7,7 @@ const useUsers = () => {
   const [users, setUsers] = useState([]);
   const [isLoad, setIsLoad] = useState(true);
   useEffect(() => {
-    fetch(`http://localhost:5000/user`, {
+    fetch(`https://evening-ridge-50687.herokuapp.com/user`, {
       method: "GET",
       headers: {
         "content-type": "application/json",

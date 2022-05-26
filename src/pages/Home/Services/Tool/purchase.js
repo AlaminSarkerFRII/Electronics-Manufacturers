@@ -11,7 +11,7 @@ const Purchase = () => {
     const { id } = useParams()
     const [part, setPart] = useState({})
     useEffect(() => {
-        fetch(http://localhost:5000/parts/${id})
+        fetch(https://evening-ridge-50687.herokuapp.com/parts/${id})
             .then(res => res.json())
             .then(data => setPart(data))
     }, [id])

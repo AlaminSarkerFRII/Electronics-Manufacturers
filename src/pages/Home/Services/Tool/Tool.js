@@ -13,7 +13,7 @@ const Tool = () => {
   // const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/tool/${id}`;
+    const url = `https://evening-ridge-50687.herokuapp.com/tool/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -60,7 +60,7 @@ const Tool = () => {
     };
 
     // fetch to post
-    fetch("http://localhost:5000/order", {
+    fetch("https://evening-ridge-50687.herokuapp.com/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",

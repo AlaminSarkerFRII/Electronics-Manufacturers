@@ -25,20 +25,22 @@ const MyOrders = () => {
   }, [user]);
 
   return (
-    <div>
-      <h2>My Orders {orders.length} </h2>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+    <div className="w-4/5 mx-auto">
+      <h2 className="text-4xl font-bold py-4 text-center">
+        My Orders {orders.length}
+      </h2>
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           <thead>
             <tr>
               <th></th>
-              <th>Name</th>
-              <th>Orders Name</th>
-              <th>Price</th>
-              <th>Action</th>
+              <th className="text-xl">Name</th>
+              <th className="text-xl">Orders Name</th>
+              <th className="text-xl">Price</th>
+              <th className="text-xl">Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="shadow-4xl bg-amber-100">
             {/* <!-- row 1 --> */}
             {orders.map((order, index) => (
               <tr>

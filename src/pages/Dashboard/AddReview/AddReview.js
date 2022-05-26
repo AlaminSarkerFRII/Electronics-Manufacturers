@@ -8,10 +8,10 @@ const AddReview = () => {
         <input
           type="text"
           placeholder="Your Name"
-          class="input input-bordered w-full max-w-lg"
+          className="input input-bordered w-full max-w-lg"
         />
         <textarea
-          class="textarea textarea-bordered w-full max-w-lg mt-3"
+          className="textarea textarea-bordered w-full max-w-lg mt-3"
           placeholder="Your Comment"
         ></textarea>
       </div>
@@ -20,23 +20,23 @@ const AddReview = () => {
           type="text"
           name="email"
           placeholder="Your Email"
-          class="block input input-bordered w-full max-w-sm"
+          className="block input input-bordered w-full max-w-sm"
         />
         <input
           type="text"
           placeholder="your ratings not more than 5 "
-          class="block input input-bordered w-full max-w-sm"
+          className="block input input-bordered w-full max-w-sm"
         />
         <input
           type="text"
           placeholder="Your Job"
-          class="block input input-bordered max-w-sm"
+          className="block input input-bordered max-w-sm"
         />
         <input
           type="file"
           name="image"
           id=""
-          class="block input input-bordered max-w-sm"
+          className="block input input-bordered max-w-sm"
         />
       </div>
       <button className="btn btn-primary my-2 w-full max-w-lg mx-auto">

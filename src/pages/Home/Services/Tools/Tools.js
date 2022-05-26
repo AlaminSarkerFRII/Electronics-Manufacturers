@@ -30,14 +30,14 @@ const Tools = () => {
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {tools.map((tool) => (
           <div key={tool._id} tool={tool}>
-            <div class="card w-96 max-h-md bg-base-100 shadow-xl">
+            <div className="card w-96 max-h-md bg-base-100 shadow-xl">
               <figure>
                 <img src={tool.img} alt="images" />
               </figure>
-              <div class="card-body">
-                <h2 class="card-title">
+              <div className="card-body">
+                <h2 className="card-title">
                   {tool.name}
-                  <div class="badge badge-secondary">NEW</div>
+                  <div className="badge badge-secondary">NEW</div>
                 </h2>
                 {/* <p className="text-orange-400 font-bold">
             Minimum Order Quantity : {minOrderQuantity}
@@ -48,14 +48,14 @@ const Tools = () => {
                 <p className="max-w-md">
                   {tool.desc?.slice(0, 100)} <span>....</span>
                 </p>
-                <div class="card-actions justify-end">
+                <div className="card-actions justify-end">
                   <button
                     onClick={() => handlePurchase(tool)}
-                    class="btn  btn-xs"
+                    className="btn  btn-xs"
                   >
                     Purchase
                   </button>
-                  <button class="btn btn-xs">Add Tools</button>
+                  <button className="btn btn-xs">Add Tools</button>
                 </div>
               </div>
             </div>

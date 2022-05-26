@@ -5,23 +5,23 @@ import profileImg from "../../../assests/imgae-1.jpg";
 const Portfolio = () => {
   return (
     <div className="px-20">
-      <div class="hero min-h-screen">
-        <div class="hero-content flex-col lg:flex-row-reverse w-full">
+      <div className="hero min-h-screen">
+        <div className="hero-content flex-col lg:flex-row-reverse w-full">
           <img
             src={profileImg}
-            class="max-w-sm w-full rounded-full shadow-2xl mx-auto"
+            className="max-w-sm w-full rounded-full shadow-2xl mx-auto"
             alt=""
           />
           <div className="max-w-lg">
             <p className="text-xl">Hi !! I am </p>
-            <h1 class="text-5xl font-bold">Alamin Sarker</h1>
-            <p class="py-2 text-md">
+            <h1 className="text-5xl font-bold">Alamin Sarker</h1>
+            <p className="py-2 text-md">
               Address: 3/7A, Aziz Mohollah, Mohammadpur, Dhaka-1207 ,
               Bangladesh.
               <br /> <p>Mobile No: +8801740051568</p>
               <p className="font-bold">Email: alamin.education1997@gmail.com</p>
             </p>
-            <button class="btn btn-primary">Hire Me</button>
+            <button className="btn btn-primary">Hire Me</button>
           </div>
         </div>
       </div>
@@ -68,9 +68,9 @@ const Portfolio = () => {
       {/* table */}
 
       <div className="py-10">
-        <div class="overflow-x-auto w-full py-5">
+        <div className="overflow-x-auto w-full py-5">
           <h1 className="text-2xl font-bold py-3">Academic Qualification:</h1>
-          <table class="table table-zebra w-full">
+          <table className="table table-zebra w-full">
             {/* <!-- head --> */}
             <thead>
               <tr>

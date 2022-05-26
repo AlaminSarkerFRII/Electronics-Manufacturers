@@ -6,12 +6,12 @@ const Blog = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 px-20 py-10">
         <div
           tabIndex="0"
-          class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
+          className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
         >
-          <h2 class="collapse-title text-xl text-error font-medium">
+          <h2 className="collapse-title text-xl text-error font-medium">
             1. How will you improve performance of React Application
           </h2>
-          <div class="collapse-content">
+          <div className="collapse-content">
             <li>Using a React.PureComponent</li>
             <br />
             <li>Making Data Immutable</li>
@@ -28,12 +28,12 @@ const Blog = () => {
         </div>
         <div
           tabindex="0"
-          class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
+          className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
         >
-          <h2 class="collapse-title text-xl text-error font-medium">
+          <h2 className="collapse-title text-xl text-error font-medium">
             2.what are the different ways to manage state react application
           </h2>
-          <div class="collapse-content">
+          <div className="collapse-content">
             <li>
               Local (UI) state Local state is data we manage in one or another
               component.
@@ -54,12 +54,12 @@ const Blog = () => {
         </div>
         <div
           tabindex="0"
-          class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
+          className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
         >
-          <h2 class="collapse-title text-xl text-error font-medium">
+          <h2 className="collapse-title text-xl text-error font-medium">
             3.how does prototypal inheritance work?
           </h2>
-          <div class="collapse-content">
+          <div className="collapse-content">
             <p>
               Every object with its methods and properties contains an internal
               and hidden property known as . The Prototypal Inheritance is a
@@ -74,12 +74,12 @@ const Blog = () => {
         </div>
         <div
           tabindex="0"
-          class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
+          className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
         >
-          <div class="collapse-title text-error text-xl font-medium">
+          <div className="collapse-title text-error text-xl font-medium">
             4.Why should we not update the state directly?
           </div>
-          <div class="collapse-content">
+          <div className="collapse-content">
             <p>
               One should never update the state directly because of the
               following reasons: If you update it directly, calling the
@@ -94,12 +94,12 @@ const Blog = () => {
         </div>
         <div
           tabindex="0"
-          class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
+          className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
         >
-          <h2 class="collapse-title text-error text-xl font-medium">
+          <h2 className="collapse-title text-error text-xl font-medium">
             5.How will you search a products by name ?
           </h2>
-          <div class="collapse-content">
+          <div className="collapse-content">
             <p>
               There are different methods in JavaScript that you can use to
               search for an item in an array. Which method you choose depends on
@@ -110,12 +110,12 @@ const Blog = () => {
         </div>
         <div
           tabindex="0"
-          class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
+          className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
         >
-          <h2 class="collapse-title text-xl text-error font-medium">
+          <h2 className="collapse-title text-xl text-error font-medium">
             6.what is the unit test why we use?
           </h2>
-          <div class="collapse-content">
+          <div className="collapse-content">
             <p>
               Let's start with the definition: Unit testing is a software
               testing method where “units”—the individual components of

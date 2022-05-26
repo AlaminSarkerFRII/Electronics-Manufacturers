@@ -1,6 +1,5 @@
 [
     {
-      "id": "101",
       "name": "Cajun spiced fish tacos",
       "price": 20,
       "ratings": 4.4,
@@ -14,7 +13,6 @@
       "profile": "https://i.imgur.com/veekP9S.jpg"
     },
     {
-      "id": "102",
       "name": "Escovitch Fish",
       "price": 10,
       "ratings": 5.0,
@@ -28,7 +26,6 @@
       "profile": "https://i.imgur.com/RyI0eIV.png"
     },
     {
-      "id": "103",
       "name": "Fish pie",
       "price": 22,
       "ratings": 4.8,
@@ -41,22 +38,8 @@
       "user": "Lois Di Nominator",  
       "profile": "https://i.imgur.com/vsL6dk9.jpg"
     },
+    
     {
-      "id": "104",
-      "name": "Chicken Alfredo",
-      "price": 45,
-      "ratings": 4.6,
-      "ratingsCount": 3725,
-      "img": "https://www.themealdb.com/images/media/meals/wruvqv1511880994.jpg",
-      "description": "This easy Chicken Alfredo recipe includes golden pan-fried seasoned chicken breasts and tender noodles, coated in the most dreamy cream sauce ever. A showstopper meal and it’s all done in just over 30 minutes! Looking for other easy creamy pasta dishes? You will love our Shrimp Alfredo, Spaghetti Carbonara, and Chicken Tetrazzini. For Chicken Alfredo Pasta, you have 3 main components, all of which are delicious on their own and even more amazing once combined chicken, pasta.",
-      "comment":"I have never eaten a big Mac before and I recently just tried one and now I get it whenever I order mcdonalds. Although I can do without the third bun it's still pretty good and very filling.",
-      "shipping": 1,
-      "quantity": 0,
-      "user": "Rita Book",  
-      "profile": "https://i.imgur.com/yi2nmGx.jpg"
-    },
-    {
-      "id": "105",
       "name": "Chicken Basquaise",
       "price": 420,
       "ratings": 3.9,
@@ -70,7 +53,6 @@
       "profile": "https://i.imgur.com/veekP9S.jpg"
     },
     {
-      "id": "106",
       "name": "Chicken Couscous",
       "price": 53,
       "ratings": 5.0,
@@ -84,7 +66,6 @@
       "profile": "https://i.imgur.com/MTJ60Jh.jpg"
     },
     {
-      "id": "107",
       "name": "Mbuzi Choma",
       "price": 66,
       "ratings": 5.0,
@@ -166,49 +147,8 @@
       "quantity": 0,
       "user": "Lynne Gwistic",  
       "profile": "https://i.imgur.com/3OUIKWm.jpg"
-    },
-    {
-      "id": "113",
-      "name": "Hot Chocolate Fudge",
-      "price": 38,
-      "ratings": 4,
-      "ratingsCount": 35,
-      "img": "https://www.themealdb.com/images/media/meals/xrysxr1483568462.jpg",
-      "description": "This is the most sublime summer chocolate dessert, especially for eating out of doors – say, at a barbecue. The sauce can be made at any stage and kept covered in the fridge, then re-heated. To make the ice cream, simply put everything into a bowl and use an electric hand mixer to whisk all the ingredients together thoroughly. Then pour the mixture into the polythene freezer box and place it in the coldest part of the freezer. After about 2 hours, or when the edges are starting to freeze, remove it and use the hand mixer to give it another good mix and break down any ice crystals. Return to the freezer, then repeat the whisking after 3 more hours.",
-      "comment":"McD’s entirely missed the mark with the new Grand Big Mac. 🙁The essential problem with the original Big Mac was too little beef per burger. New the just made a bigger version–same ratio, same dissatisfaction. New buns to stock, new packing to stock–stupid. All they had to due was put the patties from the quarter pounder in the original–good meat to burger ratio, increase in price appropriate, no new packaging, no new buns, they missed it entirely.",
-      "shipping": 1,
-      "quantity": 0,
-      "user": "Des Ignayshun",  
-      "profile": "https://i.imgur.com/cBF7IXc.jpg"
-    },
-    {
-      "id": "114",
-      "name": "Key Lime Pie",
-      "price": 43,
-      "ratings": 4,
-      "ratingsCount": 75,
-      "img": "https://www.themealdb.com/images/media/meals/qpqtuu1511386216.jpg",
-      "description": "Key lime pie is an American dessert pie made of lime, egg yolks, and sweetened condensed milk. It may be served with no topping, topped with a meringue topping made from egg whites, or with whipped cream; it may be cooked in a pie crust, graham cracker crust, or no crust.[2] The dish is named after the small Key limes, which are more aromatic than the common Persian limes, and which have yellow, not green, juice. The filling in a Key lime pie is also yellow, largely because of the egg yolks. The filling is made similarly to a Magic Lemon Cream Pie, by simply mixing the ingredients without cooking: the proteins of the egg yolks and condensed milk and the acidic lime juice curdle, thickening the mixture without baking. Today, key lime pies are usually baked to pasteurize the eggs and thicken the filling further.",
-      "comment":"I remember when the Big Mac first came out. I loved it then and love it now. I read about a guy who claims he has eaten one every day for years. I belive it. I long for one now as I write this review.",
-      "shipping": 1,
-      "quantity": 0,
-      "user": "Laura Norda",  
-      "profile": "https://i.imgur.com/0FOxcZi.jpg"
-    },
-    {
-      "id": "115",
-      "name": "Lasagna Sandwiche",
-      "price": 48,
-      "ratings": 4.5,
-      "ratingsCount": 3725,
-      "img": "https://www.themealdb.com/images/media/meals/xr0n4r1576788363.jpg",
-      "description": "Lasagna with garlic bread is a portion of incredible comfort food in the winter.  With this recipe, we combined both and lots of Sargento® 5 Cheese Italian to create a lasagna grilled cheese sandwich.  Incredible just got better! In a large skillet, brown ground beef until no longer pink. Drain fat and return to heat. Stir in sauce. Simmer for 10 minutes or until heated through. Remove from heat and let cool for 10 minutes.",
-      "comment":"I had a big Mac last night and I couldn’t believe how thin the burger was!!! Rip off all bread never again",
-      "shipping": 1,
-      "quantity": 0,
-      "user": "Mike Rowe-Soft",  
-      "profile": "https://i.imgur.com/l5VyXrK.jpg"
     }
+  
   ]
   
   

@@ -4,6 +4,7 @@ import Banner from "../Banner/Banner";
 import BodyBanner from "../BodyBanner/BodyBanner";
 import Card from "../Card/Card";
 import GetInTOuch from "../GetInTOuch/GetInTOuch";
+import Reviews from "../../Reviews/Reviews";
 import Tools from "../Services/Tools/Tools";
 import Summary from "../Summary/Summary";
 
@@ -14,7 +15,7 @@ const Home = () => {
       <Card />
       <Tools />
       <BodyBanner />
-      {/* <Reviews></Reviews> */}
+      <Reviews></Reviews>
       <GetInTOuch />
       <Summary />
       <Footer />

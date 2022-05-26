@@ -88,14 +88,14 @@ const Tool = () => {
     <div className="px-20">
       <h2 className="text-3xl text-center text-warning"> Place To Orders </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 my-6 gap-0 min-h-md bg-base-200 mx-auto  shadow-2xl rounded-xl">
-        <div class="card max-w-sm max-h-md mx-auto my-6">
+        <div className="card max-w-sm max-h-md mx-auto my-6">
           <figure>
             <img className="rounded-full w-56 h-56" src={img} alt="images" />
           </figure>
-          <div class="card-body">
-            <h2 class="card-title">
+          <div className="card-body">
+            <h2 className="card-title">
               {name}
-              <div class="badge badge-secondary">NEW</div>
+              <div className="badge badge-secondary">NEW</div>
             </h2>
             <p className="text-orange-400 font-bold">
               Minimum Order Quantity : {minOrderQuantity}
@@ -114,55 +114,55 @@ const Tool = () => {
 
         {/* input form star here */}
         <form onSubmit={handleSubmit}>
-          <div class="card-body">
+          <div className="card-body">
             <h2 className="text-center">
               Order For :
               <span className="text-info font-bold text-2xl"> {name}</span>
             </h2>
-            <div class="form-control">
+            <div className="form-control">
               <input
                 type="text"
                 name="name"
                 value={user?.displayName}
-                class="input input-bordered"
+                className="input input-bordered"
                 readOnly
               />
             </div>
-            <div class="form-control">
+            <div className="form-control">
               <input
                 type="email"
                 name="email"
                 value={user?.email}
-                class="input input-bordered"
+                className="input input-bordered"
                 readOnly
               />
             </div>
-            <div class="form-control">
+            <div className="form-control">
               <input
                 type="text"
                 name="order"
                 value={name}
-                class="input input-bordered"
+                className="input input-bordered"
                 readOnly
               />
             </div>
-            <div class="form-control">
+            <div className="form-control">
               <input
                 type="text"
                 name="price"
                 value={price}
-                class="input input-bordered"
+                className="input input-bordered"
                 readOnly
               />
             </div>
-            <div class="form-control">
+            <div className="form-control">
               <input
                 type="number"
                 id="quantity"
                 name="quantity"
                 placeholder={minOrderQuantity}
                 ref={quantityRef}
-                class="input input-bordered"
+                className="input input-bordered"
                 required
                 onChange={handleQuantity}
               />
@@ -178,26 +178,26 @@ const Tool = () => {
                 </p>
               </div>
             </div>
-            <div class="form-control">
+            <div className="form-control">
               <input
                 type="number"
                 name="phone"
                 placeholder="Enter Phone Number"
-                class="input input-bordered"
+                className="input input-bordered"
                 required
               />
             </div>
-            <div class="form-control">
+            <div className="form-control">
               <input
                 type="text"
                 name="address"
                 placeholder="Enter Your Address"
-                class="input input-bordered"
+                className="input input-bordered"
                 required
               />
             </div>
-            <div class="form-control mt-2">
-              <button disabled={btnDisable} class="btn btn-primary">
+            <div className="form-control mt-2">
+              <button disabled={btnDisable} className="btn btn-primary">
                 Confirm Orders
               </button>
             </div>

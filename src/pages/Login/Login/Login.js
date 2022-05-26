@@ -64,8 +64,8 @@ const Login = () => {
 
   return (
     <div>
-      <div class="hero bg-base-200">
-        <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 my-10">
+      <div className="hero bg-base-200">
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 my-10">
           <div className="card-body">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="form-control w-full max-w-xs">
@@ -141,18 +141,18 @@ const Login = () => {
               />
             </form>
           </div>
-          <div class="divider w-40 mx-auto">OR</div>
+          <div className="divider w-40 mx-auto">OR</div>
           <div className="flex flex-col my-2">
             <button
               onClick={() => signInWithGoogle()}
-              class="btn bg-white text-black my-4 mx-auto px-6 flex flex-row font-bold hover:rounded-full hover:bg-orange-200"
+              className="btn bg-white text-black my-4 mx-auto px-6 flex flex-row font-bold hover:rounded-full hover:bg-orange-200"
             >
               <span>
                 <FcGoogle className="w-6 h-6 font-bold" />
               </span>
               <span className="font-bold">continue with google</span>
             </button>
-            <button class="btn text-black my-2 mx-auto gap-3 font-bold flex flex-row px-6 bg-sky-600 hover:bg-white  hover:rounded-full ">
+            <button className="btn text-black my-2 mx-auto gap-3 font-bold flex flex-row px-6 bg-sky-600 hover:bg-white  hover:rounded-full ">
               <FaFacebook className="w-6 h-6 font-white" />
               <span className="font-bold">continue with Facebook</span>
             </button>
@@ -161,7 +161,7 @@ const Login = () => {
             <h4 className="text-center font-bold">Don't have an account ?</h4>
             <button
               onClick={() => navigate("/register")}
-              class="btn text-black my-3 mx-auto gap-3 font-bold flex flex-row px-6 bg-white hover:bg-amber-400 hover:rounded-full "
+              className="btn text-black my-3 mx-auto gap-3 font-bold flex flex-row px-6 bg-white hover:bg-amber-400 hover:rounded-full "
             >
               <BiLogInCircle className="w-6 h-6 font-white" />
               <span className="font-bold">Register Now </span>

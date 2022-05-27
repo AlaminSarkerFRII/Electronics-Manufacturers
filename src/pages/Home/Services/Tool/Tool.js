@@ -78,6 +78,7 @@ const Tool = () => {
       .then((data) => {
         // console.log(data);
         toast.success("Order Added Successfully");
+        // e.target.reset()
       });
 
  };

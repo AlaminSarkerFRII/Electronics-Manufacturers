@@ -24,17 +24,17 @@ const AllUser = () => {
   // console.log(users);
 
   return (
-    <div>
-      <h2 className="text-2xl text-center text-purple-600">All User</h2>
+    <div className="px-20">
+      <h2 className="text-3xl text-center mb-4">All User</h2>
 
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
             <tr>
-              <th>Sl</th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th  className="text-xl font-bold">Sl</th>
+              <th className="text-xl font-bold">Name</th>
+              <th className="text-xl font-bold">Action</th>
+              <th className="text-xl font-bold">Remove</th>
             </tr>
           </thead>
           <tbody>

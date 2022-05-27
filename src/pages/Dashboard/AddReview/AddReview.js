@@ -10,16 +10,14 @@ const AddReview = () => {
     console.log(data);
 
     const dataForm = {
-      name: data.name,
-      price: data.price,
-      inStock: data.inStock,
-      minOrderQuantity: data.minOrderQuantity,
-      desc: data.desc,
-      img: data.img,
+      user: data.user,
+      ratings: data.ratings,
+      comment: data.comment,
+      profile: data.profile,
     };
 
     // const url =;
-    fetch("http://localhost:5000/tool", {
+    fetch("http://localhost:5000/review", {
       method: "POST",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -30,7 +28,7 @@ const AddReview = () => {
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
-        toast.success("Tool added successfully");
+        toast.success("Review added successfully");
         reset();
       });
   };
@@ -44,50 +42,36 @@ const AddReview = () => {
 
           <input
             className="mb-2 input input-ghost w-full max-w-xs bg-white"
-            placeholder="Product Name"
+            placeholder="User Name"
             type="text"
-            {...register("name")}
+            {...register("user")}
           />
-
+    
           <input
             className="mb-2 input input-ghost w-full max-w-xs bg-white"
-            placeholder="Available Quantity"
+            placeholder="Ratings Not more then 5"
             type="number"
-            {...register("inStock")}
-          />
-
-          <input
-            className="mb-2 input input-ghost w-full max-w-xs bg-white"
-            placeholder=" Minimum Order quantity"
-            type="number"
-            {...register("minOrderQuantity")}
-          />
-
-          <input
-            className="mb-2 input input-ghost w-full max-w-xs bg-white"
-            placeholder="Price"
-            type="number"
-            {...register("price")}
+            {...register("ratings")}
           />
 
           <textarea
             className="mb-2 input input-ghost w-full max-w-xs bg-white"
-            placeholder="Description"
+            placeholder="comments"
             type="text"
-            {...register("desc")}
+            {...register("comment")}
           />
 
           <input
             className="mb-2 input input-ghost w-full max-w-xs bg-white"
             placeholder="Photo URL"
-            {...register("img")}
+            {...register("profile")}
           />
 
           <div class="card-actions justify-end">
             <input
               className="btn-primary input input-ghost w-full max-w-xs font-bold"
               type="submit"
-              value="Add Tool"
+              value="Add Review"
             />
           </div>
         </div>

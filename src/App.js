@@ -59,7 +59,7 @@ function App() {
           <Route path="addReview" element={<AddReview />}></Route>
           <Route path="payment/:id" element={<Payment />}></Route>
           <Route path="manageOrder/:id" element={<ManageOrder />}></Route>
-          <Route path="updateProfile/:id" element={<MyProfile />}></Route>
+          <Route path="updateProfile" element={<MyProfile />}></Route>
           <Route
             path="users"
             element={

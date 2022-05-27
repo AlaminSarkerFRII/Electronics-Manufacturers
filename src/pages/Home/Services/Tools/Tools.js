@@ -39,12 +39,13 @@ const Tools = () => {
                   {tool.name}
                   <div className="badge badge-secondary">NEW</div>
                 </h2>
-                {/* <p className="text-orange-400 font-bold">
-            Minimum Order Quantity : {minOrderQuantity}
+
+                <p className="text-orange-400 font-bold">
+            Minimum Order Quantity : {tool.minOrderQuantity}
           </p>
           <p className="text-orange-400 font-bold">
-            Available Quantity : {inStock}
-          </p> */}
+            Available Quantity : {tool.inStock}
+          </p>
                 <p className="max-w-md">
                   {tool.desc?.slice(0, 100)} <span>....</span>
                 </p>

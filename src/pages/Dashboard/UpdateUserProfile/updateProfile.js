@@ -46,7 +46,7 @@ const MyProfile = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 my-6 gap-0 min-h-md bg-base-200 mx-auto  shadow-2xl rounded-xl">
         <div className="card max-w-sm max-h-md mx-auto my-6">
           <figure>
-            <img className="rounded-full w-56 h-56" src={user?.img?.PhotoURL} alt="images" />
+            <img className="rounded-full w-24 h-24" src={user?.img?.PhotoURL} alt="images" />
           </figure>
           <div className="card-body">
             <h2 className="card-title">

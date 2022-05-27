@@ -76,6 +76,22 @@ function App() {
               </RequireAdmin>
             }
           ></Route>
+          <Route
+            path="manageOrders"
+            element={
+              <RequireAdmin>
+                <AddTool />
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="manageTools"
+            element={
+              <RequireAdmin>
+                <AddTool />
+              </RequireAdmin>
+            }
+          ></Route>
         </Route>
         <Route path="/summary" element={<Summary />}></Route>
         <Route path="/portfolio" element={<Portfolio />}></Route>

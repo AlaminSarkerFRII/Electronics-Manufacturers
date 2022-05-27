@@ -13,7 +13,6 @@ import Tool from "./pages/Home/Services/Tool/Tool";
 import Dashboard from "./pages/Dashboard/DashboardHome/Dashboard";
 import MyOrders from "./pages/Dashboard/MyOrders/MyOrders";
 import AddReview from "./pages/Dashboard/AddReview/AddReview";
-import MyProfile from "./pages/Dashboard/MyProfile/MyProfile";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Portfolio from "./pages/Home/Portfolio/Portfolio";
@@ -22,6 +21,8 @@ import AllUser from "./pages/Dashboard/AllUser/AllUser";
 import Payment from "./pages/Dashboard/Payment/Payment";
 import ManageOrder from "./pages/Dashboard/ManageOrder/ManageOrder";
 import AddTool from "./pages/Dashboard/AddTools/AddTools";
+import MyProfile from "./pages/Dashboard/UpdateUserProfile/updateProfile";
+import RequireAdmin from "./pages/Routes/PrivateRoute/RequireAdmin";
 
 // aso animation
 
@@ -58,9 +59,23 @@ function App() {
           <Route path="addReview" element={<AddReview />}></Route>
           <Route path="payment/:id" element={<Payment />}></Route>
           <Route path="manageOrder/:id" element={<ManageOrder />}></Route>
-          <Route path="myProfile" element={<MyProfile />}></Route>
-          <Route path="users" element={<AllUser />}></Route>
-          <Route path="addTool" element={<AddTool />}></Route>
+          <Route path="updateProfile/:id" element={<MyProfile />}></Route>
+          <Route
+            path="users"
+            element={
+              <RequireAdmin>
+                <AllUser />
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="addTool"
+            element={
+              <RequireAdmin>
+                <AddTool />
+              </RequireAdmin>
+            }
+          ></Route>
         </Route>
         <Route path="/summary" element={<Summary />}></Route>
         <Route path="/portfolio" element={<Portfolio />}></Route>

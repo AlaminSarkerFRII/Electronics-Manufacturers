@@ -39,7 +39,7 @@ const Navbar = () => {
         </NavLink>
         <ul className="p-2">
           <li>
-            <NavLink to="/itSupport">IT Support</NavLink>
+            <NavLink to="/itSupport">Our Support Section</NavLink>
           </li>
           <li>
             <NavLink to="/design">Design and Development</NavLink>
@@ -50,7 +50,7 @@ const Navbar = () => {
         <NavLink to="/tools">tools</NavLink>
       </li>
       <li>
-        <NavLink id="home#review" to="/home#review">
+        <NavLink id="home#review" to="/">
           Review
         </NavLink>
       </li>
@@ -61,7 +61,6 @@ const Navbar = () => {
         <NavLink to="/blog">Blog</NavLink>
       </li>
       <li>{user && <NavLink to="/dashboard">Dashboard</NavLink>}</li>
-
       <li className="flex justify-between items-center">
         {user ? (
           <button

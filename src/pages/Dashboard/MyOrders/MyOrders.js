@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
+import {toast} from "react-toastify"
 import auth from "../../../Firebase.init";
+import { RiDeleteBin6Fill } from "react-icons/ri";
+import { SiAmazonpay } from "react-icons/si";
 
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -21,12 +23,36 @@ const MyOrders = () => {
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
-        toast.success("Orders Added Successfully");
+        // toast.success("Orders Added Successfully");
       });
   }, [user]);
 
+  // delete orders
+
+  const handleOrderDelete = (id) => {
+    console.log("Deleting", id);
+    const procced = window.confirm("are you sure wants to delete");
+    if (procced) {
+      const url = `http://localhost:5000/order/${id}`;
+      fetch(url, {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/jon",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            const orderRemaining = orders.filter(user=>user._id !==id) 
+            setOrders(orderRemaining);
+            toast.success(" Order Deleted Successfully")
+          }
+        });
+    }
+  };
+
   return (
-    <div className="w-4/5 mx-auto">
+    <div className="w-4/5 mx-auto sm:min-w-screen">
       <h2 className="text-4xl font-bold py-4 text-center">
         My Orders {orders.length}
       </h2>
@@ -53,10 +79,19 @@ const MyOrders = () => {
                   {order.price && !order.paid && (
                     <Link to={`/dashboard/payment/${order._id}`}>
                       <button className="btn btn-xs btn-success mr-2">
-                        pay
+                        <SiAmazonpay className="text-2xl" />
                       </button>
                     </Link>
                   )}
+                  {order.price && !order.paid && (
+                    <button
+                      onClick={() => handleOrderDelete(order._id)}
+                      className=" btn-xs pr-4 btn-outline-0"
+                    >
+                      <RiDeleteBin6Fill className="text-2xl text-warning" />
+                    </button>
+                  )}
+
                   {order.price && order.paid && (
                     <div>
                       <p>

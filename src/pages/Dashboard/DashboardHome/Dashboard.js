@@ -5,8 +5,8 @@ import auth from "../../../Firebase.init";
 import useAdmin from "../../hooks/useAdmin";
 
 const Dashboard = () => {
-  // const [user] = useAuthState(auth);
-  // const [admin] = useAdmin(user);
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
 
   return (
     <div className="drawer drawer-mobile">
@@ -33,14 +33,18 @@ const Dashboard = () => {
             <Link to="/dashboard/addReview">Add Review</Link>
           </li>
           <li>
-            <Link to="/dashboard/myProfile">My Profile</Link>
+            <Link to="/dashboard/updateProfile/">My Profile</Link>
           </li>
-          <li>
-            <Link to="/dashboard/users">All User</Link>
-          </li>
-          <li>
-            <Link to="/dashboard/addTool">Add Tools</Link>
-          </li>
+          {admin && (
+            <div>
+              <li>
+                <Link to="/dashboard/users">All User</Link>
+              </li>
+              <li>
+                <Link to="/dashboard/addTool">Add Tools</Link>
+              </li>
+            </div>
+          )}
         </ul>
       </div>
     </div>

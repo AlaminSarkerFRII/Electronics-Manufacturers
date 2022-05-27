@@ -19,10 +19,12 @@ import Portfolio from "./pages/Home/Portfolio/Portfolio";
 import Blog from "./pages/Home/Blog";
 import AllUser from "./pages/Dashboard/AllUser/AllUser";
 import Payment from "./pages/Dashboard/Payment/Payment";
-import ManageOrder from "./pages/Dashboard/ManageOrder/ManageOrder";
+import ManageOrder from "./pages/Dashboard/ManageOrder/ManageOrders";
 import AddTool from "./pages/Dashboard/AddTools/AddTools";
 import MyProfile from "./pages/Dashboard/UpdateUserProfile/updateProfile";
 import RequireAdmin from "./pages/Routes/PrivateRoute/RequireAdmin";
+import ManageOrders from "./pages/Dashboard/ManageOrder/ManageOrders";
+import ManageTools from "./pages/Dashboard/DashboardHome/ManageTools/ManageTools";
 
 // aso animation
 
@@ -80,7 +82,7 @@ function App() {
             path="manageOrders"
             element={
               <RequireAdmin>
-                <AddTool />
+                <ManageOrders/>
               </RequireAdmin>
             }
           ></Route>
@@ -88,7 +90,7 @@ function App() {
             path="manageTools"
             element={
               <RequireAdmin>
-                <AddTool />
+                <ManageTools/>
               </RequireAdmin>
             }
           ></Route>

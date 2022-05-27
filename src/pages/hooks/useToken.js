@@ -8,7 +8,7 @@ const useToken = (user) => {
     // const name = user?.user?.displayName;
     const currentUser = { email: email };
     if (email) {
-      fetch(`https://evening-ridge-50687.herokuapp.com/user/${email}`, {
+      fetch(`http://localhost:5000/users/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -19,7 +19,6 @@ const useToken = (user) => {
         .then((data) => {
           console.log(data);
           const accessToken = data.token;
-
           localStorage.setItem("accessToken", accessToken);
           setToken(accessToken);
         });

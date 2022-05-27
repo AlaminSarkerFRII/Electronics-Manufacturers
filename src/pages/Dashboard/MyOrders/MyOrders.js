@@ -33,8 +33,11 @@ const MyOrders = () => {
         })
         .then((data) => {
           setOrders(data);
-          
-        });
+          console.log(data)
+        }) 
+        .catch((error)=>{
+          console.log(error)
+        })
     }
   }, [user,navigate]);
 

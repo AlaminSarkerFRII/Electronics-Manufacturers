@@ -22,7 +22,7 @@ const Tools = () => {
   };
 
   return (
-    <div className="my-20 px-20">
+    <div className="my-20 px-20 ">
       <h1 className="text-xl text-center">Our tools</h1>
       <h2 className="mb-10 text-4xl text-center text-red-500">
         Electrical Components Manufacturers
@@ -30,7 +30,7 @@ const Tools = () => {
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {tools.map((tool) => (
           <div key={tool._id} tool={tool}>
-            <div className="card w-96 max-h-md bg-base-100 shadow-xl">
+            <div className="card w-96 max-h-md bg-base-100 shadow-xl  hover:opacity-50 transition duration-300 ease-in-out">
               <figure>
                 <img src={tool.img} alt="images" />
               </figure>

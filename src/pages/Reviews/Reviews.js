@@ -9,7 +9,7 @@ const Reviews = () => {
   return (
     <section id="reviews" className="px-20">
       <h2 className="text-4xl text-center my-3"> User Reviews </h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 ">
         {reviews.map((review) => (
           <Review key={review._id} review={review}></Review>
         ))}

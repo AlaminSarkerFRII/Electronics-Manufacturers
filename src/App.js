@@ -21,6 +21,7 @@ import Blog from "./pages/Home/Blog";
 import AllUser from "./pages/Dashboard/AllUser/AllUser";
 import Payment from "./pages/Dashboard/Payment/Payment";
 import ManageOrder from "./pages/Dashboard/ManageOrder/ManageOrder";
+import AddTool from "./pages/Dashboard/AddTools/AddTools";
 
 // aso animation
 
@@ -59,6 +60,7 @@ function App() {
           <Route path="manageOrder/:id" element={<ManageOrder />}></Route>
           <Route path="myProfile" element={<MyProfile />}></Route>
           <Route path="users" element={<AllUser />}></Route>
+          <Route path="addTool" element={<AddTool />}></Route>
         </Route>
         <Route path="/summary" element={<Summary />}></Route>
         <Route path="/portfolio" element={<Portfolio />}></Route>

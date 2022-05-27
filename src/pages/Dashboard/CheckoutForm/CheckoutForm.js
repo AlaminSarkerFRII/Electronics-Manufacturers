@@ -11,9 +11,10 @@ const CheckoutForm = ({ order }) => {
   const [clientSecret, setClientSecret] = useState("");
 
   const { price, _id } = order;
+  console.log(typeof price);
 
   useEffect(() => {
-    fetch("http://localhost:5000/order/create-payment-intent", {
+    fetch("http://localhost:5000/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -113,7 +114,7 @@ const CheckoutForm = ({ order }) => {
         <button
           className="btn btn-success btn-sm mt-4"
           type="submit"
-          //   disabled={!stripe || !clientSecret || success}
+          disabled={!stripe || !clientSecret || success}
         >
           Pay
         </button>

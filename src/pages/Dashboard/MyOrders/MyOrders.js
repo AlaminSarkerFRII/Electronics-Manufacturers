@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../../Firebase.init";
 
 const MyOrders = () => {
@@ -20,7 +21,7 @@ const MyOrders = () => {
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
-        // console.log(data);
+        toast.success("Orders Added Successfully");
       });
   }, [user]);
 
@@ -61,9 +62,9 @@ const MyOrders = () => {
                       <p>
                         <span className="text-success">Paid</span>
                       </p>
-                      <p>
-                        Transaction id:
-                        <span className="text-success">
+                      <p className="text-xs text-orange-600">
+                        <cite>Transaction Id:</cite>
+                        <span className="text-success px-2 text-xl">
                           {order.transactionId}
                         </span>
                       </p>

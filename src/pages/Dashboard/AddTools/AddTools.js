@@ -34,7 +34,7 @@ const AddTool = () => {
       });
   };
   return (
-    <div>
+    <div className="w-3/5 mx-auto">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div class="card w-96 bg-base-100 shadow-xl">
           <div class="card-body bg-accent">

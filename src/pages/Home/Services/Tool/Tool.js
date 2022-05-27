@@ -31,24 +31,30 @@ const Tool = () => {
   const [btnDisable, setBtnDisable] = useState(false);
 
   // quantity handle
-
   const handleQuantity = (e) => {
     // e.preventDefault();
     setQuantity(e.target.value);
   };
 
-  // let totalPriceValue;
+
   // form submit
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newQuantity = quantityRef.current.value || minOrderQuantity;
-    // let totalPriceValue = parseInt(totalPrice * newQuantity);
-    if (newQuantity > minOrderQuantity) {
+    const newQuantity = parseInt(quantityRef.current.value || minOrderQuantity);
+  
+    if (newQuantity > parseInt(inStock)) {
+      setBtnDisable(true);
+      toast.error(`Maximum Order Quantity ${inStock} pcs.`);
+      return;
+    }
+    if (newQuantity < minOrderQuantity) {
       setBtnDisable(true);
       toast.error(`Minimum Order Quantity ${minOrderQuantity} pcs.`);
       return;
     }
+    console.log(newQuantity)
+    console.log(minOrderQuantity)
     const orderForm = {
       name: e.target.name.value,
       email: e.target.email.value,
@@ -63,25 +69,24 @@ const Tool = () => {
     fetch("https://evening-ridge-50687.herokuapp.com/order", {
       method: "POST",
       headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         "content-type": "application/json",
       },
       body: JSON.stringify(orderForm),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         toast.success("Order Added Successfully");
       });
-  };
+
+ };
 
   useEffect(() => {
     if (quantity >= minOrderQuantity) {
       setBtnDisable(false);
     }
 
-    // else if (quantity >= inStock) {
-    //   setBtnDisable(false);
-    // }
   }, [quantity, minOrderQuantity]);
 
   return (

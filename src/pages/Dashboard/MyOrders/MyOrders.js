@@ -1,38 +1,49 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {toast} from "react-toastify"
 import auth from "../../../Firebase.init";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { SiAmazonpay } from "react-icons/si";
+import { signOut } from "firebase/auth";
 
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);
   const [user] = useAuthState(auth);
+  const navigate = useNavigate()
 
   useEffect(() => {
-    fetch(
-      `https://evening-ridge-50687.herokuapp.com/order?email=${user.email}`,
-      {
-        method: "GET",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      }
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setOrders(data);
-        // toast.success("Orders Added Successfully");
-      });
-  }, [user]);
+    if(user){
+      fetch(
+        `http://localhost:5000/order?email=${user.email}`,
+        {
+          method: "GET",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      )
+        .then((res) => {
+          if(res.status===401 || res.status===403){
+            signOut(auth)
+            localStorage.removeItem("accessToken")
+            navigate("/")
+          }
+          return res.json()
+        })
+        .then((data) => {
+          setOrders(data);
+          
+        });
+    }
+  }, [user,navigate]);
 
-  // delete orders
+  // delete my orders
 
   const handleOrderDelete = (id) => {
     console.log("Deleting", id);
-    const procced = window.confirm("are you sure wants to delete");
-    if (procced) {
+    const proceed = window.confirm("are you sure wants to delete");
+    if (proceed) {
       const url = `http://localhost:5000/order/${id}`;
       fetch(url, {
         method: "DELETE",

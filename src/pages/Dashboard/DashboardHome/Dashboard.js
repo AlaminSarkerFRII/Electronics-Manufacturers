@@ -9,7 +9,7 @@ const Dashboard = () => {
   const [admin] = useAdmin(user);
 
   return (
-    <div className="drawer drawer-mobile">
+    <div className="drawer drawer-mobile px-2 bg-slate-500 py-10 ">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         <h2 className="text-center text-orange-600">Welcome To Dashboard</h2>
@@ -21,7 +21,7 @@ const Dashboard = () => {
         <label htmlFor="my-drawer-2" className="drawer-overlay">
           A
         </label>
-        <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
+        <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 font-bold text-xl text-teal-500">
           {/* <!-- Sidebar content here --> */}
           <li>
             <Link to="/dashboard">Dashboard</Link>

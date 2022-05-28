@@ -24,7 +24,7 @@ const MyProfile = () => {
     };
 
     // fetch to post
-    fetch(`http://localhost:5000/user/${user.email}`, {
+    fetch(`https://evening-ridge-50687.herokuapp.com/user/${user.email}`, {
       method: "POST",
       headers: {
         authorization: `${user?.email} ${localStorage.getItem("accessToken")}`,

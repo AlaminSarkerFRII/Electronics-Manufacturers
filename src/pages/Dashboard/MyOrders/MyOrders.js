@@ -15,7 +15,7 @@ const MyOrders = () => {
   useEffect(() => {
     if(user){
       fetch(
-        `http://localhost:5000/order?email=${user.email}`,
+        `https://evening-ridge-50687.herokuapp.com/order?email=${user.email}`,
         {
           method: "GET",
           headers: {
@@ -47,7 +47,7 @@ const MyOrders = () => {
     console.log("Deleting", id);
     const proceed = window.confirm("are you sure wants to delete");
     if (proceed) {
-      const url = `http://localhost:5000/order/${id}`;
+      const url = `https://evening-ridge-50687.herokuapp.com/order/${id}`;
       fetch(url, {
         method: "DELETE",
         headers: {

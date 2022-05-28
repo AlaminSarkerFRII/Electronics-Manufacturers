@@ -3,23 +3,23 @@ import BodBanner from "../../../assests/Banner/Banner.png";
 
 const BodyBanner = () => {
   return (
-    <div className="my-20 px-20">
+    <div className="my-16 px-20">
       <div className="hero min-h-screen bg-base-100">
         <div className="hero-content flex-col lg:flex-row gap-20">
           <img
             src={BodBanner}
-            className="max-w-sm w-full rounded-lg shadow-2xl"
+            className="w-64 rounded-lg shadow-2xl"
             alt=""
           />
-          <div>
+          <div className=" flex items-center justify-between flex-wrap px-">
             <h2 className="text-xl font-bold text-info mb-4">
               PRODUCT LIFECYCLE INTEGRATION
             </h2>
-            <h1 className="text-5xl font-bold">
+            <h1 className="text-4xl font-bold">
               End-to-end Electronic Manufacturing tools that Compliment the full
               Product Lifecycle.
             </h1>
-            <p className="py-6">
+            <p className="py-6 px-2">
               We enable you to accomplish your business goals by supporting your
               entire product development lifecycle. By tailoring our
               manufacturing process to your specific needs, we are equipped to

@@ -22,17 +22,17 @@ const Tools = () => {
   };
 
   return (
-    <div className="my-20 px-20 ">
+    <div className="my-20 px-20">
       <h1 className="text-xl text-center">Our tools</h1>
       <h2 className="mb-10 text-4xl text-center text-red-500">
         Electrical Components Manufacturers
       </h2>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {tools.map((tool) => (
           <div key={tool._id} tool={tool}>
-            <div className="card w-96 max-h-md bg-base-100 shadow-xl  hover:opacity-50 transition duration-300 ease-in-out">
+            <div className="card sm:w-60 lg:w-96 max-h-md bg-base-100 shadow-xl  hover:opacity-50 transition duration-300 ease-in-out">
               <figure>
-                <img src={tool.img} alt="images" />
+                <img src={tool.img} className="w-full" alt="images" />
               </figure>
               <div className="card-body">
                 <h2 className="card-title">
@@ -52,11 +52,11 @@ const Tools = () => {
                 <div className="card-actions justify-end">
                   <button
                     onClick={() => handlePurchase(tool)}
-                    className="btn  btn-xs"
+                    className="btn btn-xs"
                   >
                     Purchase
                   </button>
-                  <button className="btn btn-xs">Add Tools</button>
+                  {/* <button className="btn btn-xs">Add Tools</button> */}
                 </div>
               </div>
             </div>

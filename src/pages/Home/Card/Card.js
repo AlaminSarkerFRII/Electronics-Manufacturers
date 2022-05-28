@@ -6,7 +6,7 @@ import InfoCard from "../InfoCard/InfoCard";
 
 const Card = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 items-center justify-center gap-4 px-20">
+    <div className="mt-5 grid sm:grid-cols-1 lg:grid-cols-3 items-center justify-center gap-4 px-20 w-full">
       <InfoCard
         cardTitle="Free Shipping"
         cardBody="On all orders over $75.00"

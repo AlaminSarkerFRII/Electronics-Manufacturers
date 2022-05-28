@@ -18,7 +18,7 @@ const AddTool = () => {
     };
 
     // const url =;
-    fetch("http://localhost:5000/tool", {
+    fetch("https://evening-ridge-50687.herokuapp.com/tool", {
       method: "POST",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -36,8 +36,8 @@ const AddTool = () => {
   return (
     <div className="w-3/5 mx-auto">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div class="card w-96 bg-base-100 shadow-xl">
-          <div class="card-body bg-accent">
+        <div className="card w-96 bg-base-100 shadow-xl">
+          <div className="card-body bg-accent">
             <h1 className="text-2xl text center">Add Products</h1>
 
             <input
@@ -81,7 +81,7 @@ const AddTool = () => {
               {...register("img")}
             />
 
-            <div class="card-actions justify-end">
+            <div className="card-actions justify-end">
               <input
                 className="btn-primary input input-ghost w-full max-w-xs font-bold"
                 type="submit"

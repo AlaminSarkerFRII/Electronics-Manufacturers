@@ -18,7 +18,7 @@ const ManageTools = () => {
     console.log("Deleting", id);
     const proceed = window.confirm("are you sure wants to delete");
     if (proceed) {
-      const url = `/tool/${id}`;
+      const url = `https://evening-ridge-50687.herokuapp.com/tool/${id}`;
       fetch(url, {
         method: "DELETE",
         headers: {

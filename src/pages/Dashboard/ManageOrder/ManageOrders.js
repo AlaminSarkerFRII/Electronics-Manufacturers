@@ -6,7 +6,7 @@ const ManageOrders = () => {
 
   useEffect(() => {
     axios
-      .get("/orders", {
+      .get("https://evening-ridge-50687.herokuapp.com/orders", {
         headers: {
           authorization: `Bear ${localStorage.getItem("accessToken")}`,
         },

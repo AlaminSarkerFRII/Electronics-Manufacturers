@@ -13,30 +13,29 @@ const ManageTools = () => {
     }).then((res) => setTools(res.data));
   }, []);
 
-  // delete products
-
-//   const handleOrderDelete = (id) => {
-//     console.log("Deleting", id);
-//     const proceed = window.confirm("are you sure wants to delete");
-//     if (proceed) {
-//       const url = `/tool/${id}`;
-//       fetch(url, {
-//         method: "DELETE",
-//         headers: {
-//           "content-type": "application/jon",
-//           authorization:`Bearer ${localStorage.getItem("accessToken")}`
-//         },
-//       })
-//         .then((res) => res.json())
-//         .then((data) => {
-//           if (data.deletedCount > 0) {
-//             const orderRemaining = tools.filter(tool=>tool._id !==id) 
-//             setTools(orderRemaining);
-//             toast.success(" Order Deleted Successfully")
-//           }
-//         });
-//     }
-//   };
+  // delete products 
+  const handleOrderDelete = (id) => {
+    console.log("Deleting", id);
+    const proceed = window.confirm("are you sure wants to delete");
+    if (proceed) {
+      const url = `/tool/${id}`;
+      fetch(url, {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/jon",
+          // authorization:`Bearer ${localStorage.getItem("accessToken")}`
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            const orderRemaining = tools.filter(tool=>tool._id !==id) 
+            setTools(orderRemaining);
+            toast.success(" Order Deleted Successfully")
+          }
+        });
+    }
+  };
 
   return (
     <div className="px-12 py-4">
@@ -60,7 +59,7 @@ const ManageTools = () => {
                   <th>{index + 1}</th>
                   <td>
                     <img
-                      className="rounded-full h-10 w-10"
+                      className="rounded-full h-16 w-16"
                       src={tool.img}
                       alt="img"
                     />
@@ -68,7 +67,7 @@ const ManageTools = () => {
                   <td>{tool.name}</td>
                   <td>{tool.price}</td>
                   <td>
-                    <button   className="btn btn-xs mr-4">delete</button>
+                    <button onClick={()=>handleOrderDelete(tool._id)}   className="btn btn-xs mr-4">delete</button>
                     <button className="btn btn-xs">Add Quantity</button>
                   </td>
                 </tr>

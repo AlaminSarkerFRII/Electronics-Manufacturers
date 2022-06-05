@@ -8,7 +8,7 @@ import axios from "axios"
 
 import { QueryClient, QueryClientProvider } from "react-query";
 
-// axios.defaults.baseURL="https://evening-ridge-50687.herokuapp.com/"
+axios.defaults.baseURL="https://evening-ridge-50687.herokuapp.com/"
 const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

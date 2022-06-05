@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -7,18 +8,11 @@ const Tools = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const url = "https://evening-ridge-50687.herokuapp.com/tool";
-    fetch(url,{
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        "content-type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data, "from tools");
-        setTools(data);
-      });
+    axios.get("/tool",{
+        headers:{
+            authorization:`Bearer ${localStorage.getItem("accessToken")}`
+        }
+    }).then((res) => setTools(res.data));
   }, []);
 
   const handlePurchase = (tool) => {

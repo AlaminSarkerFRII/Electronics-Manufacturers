@@ -8,7 +8,12 @@ const Tools = () => {
 
   useEffect(() => {
     const url = "https://evening-ridge-50687.herokuapp.com/tool";
-    fetch(url)
+    fetch(url,{
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        "content-type": "application/json",
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         // console.log(data, "from tools");
@@ -56,7 +61,6 @@ const Tools = () => {
                   >
                     Purchase
                   </button>
-                  {/* <button className="btn btn-xs">Add Tools</button> */}
                 </div>
               </div>
             </div>

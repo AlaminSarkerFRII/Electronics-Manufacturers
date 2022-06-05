@@ -81,7 +81,7 @@ const Navbar = () => {
   return (
     <>
       <div className="navbar bg-base-100 sticky top-0 z-50 font-bold w-full ">
-        <div className="navbar-start">
+        <div className="navbar">
           <div className="dropdown">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">
               <svg
